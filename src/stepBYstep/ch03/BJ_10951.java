@@ -21,12 +21,13 @@ public class BJ_10951 {
         System.out.println(stringBuilder);
 */
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
         StringBuilder sb = new StringBuilder();
 
-        String str = "";
+        String str;
 
-        while ( (str = br.readLine() ) != null) {
+        while ((str = br.readLine()) != null) {
+            StringTokenizer st = new StringTokenizer(str);
+
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
             sb.append(a + b + "\n");

@@ -43,4 +43,3 @@ public class BJ_5597 {
         System.out.println(check2+2);
     }
 }
-//외않되외않되외않되외않되외않되외않되외않되외않되외않되외않되외않되외않되외않되외않되
