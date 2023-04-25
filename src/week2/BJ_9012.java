@@ -1,7 +1,8 @@
-package others;
+package week2;
 
 import java.util.Scanner;
 
+//https://www.acmicpc.net/problem/9012
 public class BJ_9012 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

@@ -1,8 +1,10 @@
-package others;
+package week2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+//https://www.acmicpc.net/problem/1259
 
 public class BJ_1259 {
     public static void main(String[] args) throws IOException {
