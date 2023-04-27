@@ -40,12 +40,12 @@ public class BJ_2941 {
                 //d 뒤에 z가 나왔을때
                 if (str.charAt(i + 1) == 'z') {
                     //d 다음 z가 마지막일때
-                    if (i + 1 == str.length()-1) {
+                    if (i + 1 == str.length() - 1) {
                         count += 2;
                         break;
                     }
                     //d 다음 z 다음 '=' 일때
-                    if (str.charAt(i +2) == '=') {
+                    if (str.charAt(i + 2) == '=') {
                         count++;
                         i += 2;
                         continue;
