@@ -17,7 +17,7 @@ public class BJ_9733 {
 
         while((str = br.readLine()) != null) {
             StringTokenizer st = new StringTokenizer(str);
-            countWorks += countWorks + st.countTokens();
+            countWorks += st.countTokens();
 
             while(st.hasMoreTokens()) {
                 switch (st.nextToken()) {
@@ -30,7 +30,7 @@ public class BJ_9733 {
                     case "Cc":
                         works[2]++;
                         break;
-                    case "EA":
+                    case "Ea":
                         works[3]++;
                         break;
                     case "Tb":
@@ -45,8 +45,9 @@ public class BJ_9733 {
                 }
             }
         }
-        for (double work : works) {
-            System.out.printf("%.0f %.2f", work, work / countWorks);
+        for (int i = 0; i < 7; i++) {
+            System.out.printf("%s %.0f %.2f\n",worksName[i], works[i], works[i] / countWorks);
         }
+        System.out.println("Total " + countWorks + " 1.00");
     }
 }
