@@ -20,14 +20,15 @@ public class BJ_10814 {
         }
 
 //        value 정렬 후 같은 value 있을때 그 안에서 key로 정렬 외않되
-        memberInfo
-                .entrySet()
-                .stream()
-                .sorted(Map.Entry.comparingByValue()
-                                .thenComparing(Map.Entry.comparingByKey()))
+
+//        memberInfo
+//                .entrySet()
+//                .stream()
+//                .sorted(Map.Entry.comparingByValue()
+//                                .thenComparing(Map.Entry.comparingByKey()))
 //                                .Comparator<Entry<K, V>>
 //                            .thenComparing(Map.Entry.comparingByKey()))
-                .forEach(el -> System.out.println(el.getValue() + " " + el.getKey()));
+//                .forEach(el -> System.out.println(el.getValue() + " " + el.getKey()));
 
     }
 }
