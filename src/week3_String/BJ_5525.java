@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class BJ_5525 {
     public static void main(String[] args) throws IOException {
@@ -11,24 +12,22 @@ public class BJ_5525 {
 
         int numO = Integer.parseInt(br.readLine());
         br.readLine();
-//        int num1 = Integer.parseInt(br.readLine());
 
         String str = br.readLine();
-//        if (num1 != str.length()) return;
 
-        // O로 시작하거나 끝날때 제거
-        String str2;
-//        while (str.startsWith("O") || str.endsWith("O")) {
+        int start = 0;
+        int finish = str.length() - 1;
 
-            if (str.startsWith("0")) {
-                str2 = str.substring(1, str.length());
-                str = str2;
-            }
-            if (str.charAt(str.length() - 1) == 'O') {
-                str2 = str.substring(0, str.length() - 1);
-                str = str2;
-            }
-//        }
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == 'O') start++;
+            else break;
+        }
+        for (int i = finish;  0< i; i--) {
+            if (str.charAt(i) == 'O') finish--;
+            else break;
+        }
+
+        str = str.substring(start, finish);
 
         long result = 0;
 
@@ -46,7 +45,7 @@ public class BJ_5525 {
             if (arr[i].equals("O")) count = 1;
             else count = 0;
 
-//            O혼자 있는 문자열이 끝나면 break후 다음 문자열부터 다시 시작
+//            O혼자 있는 문자열이 끝나면 break 후 다음 문자열부터 다시 시작
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i].equals("O") && arr[i].equals(arr[j])) count++;
                 else break;
@@ -55,8 +54,10 @@ public class BJ_5525 {
             list.add(count);
             count = 0;
         }
-//        System.out.println(Arrays.toString(arr));
-//        System.out.println(list);
+        System.out.println(Arrays.toString(arr));
+        System.out.println(list);
+
+//        3 IOIOIOI
 
 //        처음 입력받은 N 이상으로 연속된 부분 필터링
 //        N 제외 하고 남은 수 카운트
@@ -64,7 +65,7 @@ public class BJ_5525 {
                 .stream()
                 .filter(el -> list.get(0) <= el)
                 .skip(1)
-//                    .peek(el -> System.out.print(el + "\n"))
+                    .peek(el -> System.out.print(el + "\n"))
                 .count();
 
         System.out.println(result);

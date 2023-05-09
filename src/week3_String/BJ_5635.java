@@ -49,7 +49,6 @@ public class BJ_5635 {
                 youngest = entry.getKey();
             }
         }
-
         System.out.println(youngest);
         System.out.println(oldest);
     }
