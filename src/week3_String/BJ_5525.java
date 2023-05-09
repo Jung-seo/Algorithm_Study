@@ -17,14 +17,18 @@ public class BJ_5525 {
 //        if (num1 != str.length()) return;
 
         // O로 시작하거나 끝날때 제거
-        if (str.startsWith("0")) {
-            String str2 = str.substring(1, str.length());
-            str = str2;
-        }
-        if (str.charAt(str.length() - 1) == 'O') {
-            String str2 = str.substring(0, str.length() - 1);
-            str = str2;
-        }
+        String str2;
+//        while (str.startsWith("O") || str.endsWith("O")) {
+
+            if (str.startsWith("0")) {
+                str2 = str.substring(1, str.length());
+                str = str2;
+            }
+            if (str.charAt(str.length() - 1) == 'O') {
+                str2 = str.substring(0, str.length() - 1);
+                str = str2;
+            }
+//        }
 
         long result = 0;
 
@@ -36,7 +40,7 @@ public class BJ_5525 {
 
         int count = 0;
 
-//        O로만 이루어진 배열에서  단일한 O로 이루어진 문자열이 연속되는 횟수를 count에 담아서 리스트 넣고
+//        O로만 이루어진 배열에서  단일한 O뒤로 단일한 O로 이루어진 문자열이 연속되는 횟수를 count에 담아서 리스트 넣고
         for (int i = 0; i < arr.length; i++) {
 
             if (arr[i].equals("O")) count = 1;

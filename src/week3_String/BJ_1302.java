@@ -18,11 +18,13 @@ public class BJ_1302 {
 
         int count = 0;
 
+//        베열에 책이름 담고
         for (int i = 0; i < cases; i++) {
             bookName[i] = br.readLine();
         }
-//        배열에 책 이름 담고
+//
         for (int i = 0; i < cases; i ++) {
+//            수량 체크
             for (int j = 0; j < cases; j++) {
                 if (bookName[i].equals(bookName[j])) {
                     count++;
@@ -35,6 +37,7 @@ public class BJ_1302 {
         int max = 0;
         String needThisBook = "";
 
+//        가장 큰 값의 키 뽑아냄
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             if (entry.getValue() > max) {
                 needThisBook = entry.getKey();
