@@ -11,21 +11,21 @@ public class BJ_1874 {
         Stack<Integer> stack = new Stack<>();
         StringBuilder sb = new StringBuilder();
 
-        int num = Integer.parseInt(br.readLine());
-        int[] arr = new int[num];
+        int testCase = Integer.parseInt(br.readLine());
+        int[] arr = new int[testCase];
 
-        int start = 1;
+        int num = 1;
 
-        for (int i = 0; i < num; i++) {
+        for (int i = 0; i < testCase; i++) {
             arr[i] = Integer.parseInt(br.readLine());
 
-//            처음 || 스텍 < 배열
-             if ((start == 1) || (!stack.isEmpty() && stack.peek() < arr[i])) {
-                while (start <= arr[i]) {
-                    stack.push(start);
+//            스텍은 비었는데 더 넣을 수 있을때 || 처음 || 스텍 < 배열
+             if (num <= arr[i] || num == 1 || (!stack.isEmpty() && stack.peek() < arr[i])) {
+                while (num <= arr[i]) {
+                    stack.push(num);
                     sb.append("+\n");
-                    start++;
-                    if (start > num + 1 ) {
+                    num++;
+                    if (num > testCase + 1 ) {
                         System.out.println("NO");
                         return;
                     }
@@ -33,25 +33,19 @@ public class BJ_1874 {
                 stack.pop();
                 sb.append("-\n");
             }
-//             배열 < 스택
-            else if (!stack.isEmpty() && stack.peek() > arr[i]) {
-                  while (stack.peek() > arr[i]) {
+//             배열 <= 스택
+            else if (!stack.isEmpty() && stack.peek() >= arr[i]) {
+                  while (stack.peek() != arr[i]) { // 스택 == 배열일때 false
                     stack.pop();
                     sb.append("-\n");
                     if (stack.isEmpty()) {
-                        System.out.println("no");
+                        System.out.println("NO");
                         return;
                     }
                 }
                 stack.pop();
                 sb.append("-\n");
             }
-
-            else if (!stack.isEmpty() && stack.peek() == arr[i]) {
-                stack.pop();
-                sb.append("-\n");
-            }
-
             else {
                 System.out.println("NO");
                 return;
@@ -63,14 +57,8 @@ public class BJ_1874 {
 
 /*
 
-
-수열을 배열에 넣는다 int[] arr
-
-int[i] stack 비교 stack이 비면 NO
 작으면 push
 같으면 pop
 크면 pop
-
-
 
 */
