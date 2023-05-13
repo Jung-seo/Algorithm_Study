@@ -16,11 +16,8 @@ public class BJ_2493 {
         int num = Integer.parseInt(br.readLine());
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        stack.push(Integer.parseInt(st.nextToken()));
-        sb.append(0 + " ");
-
-        int maxHeight = stack.peek();
-        int maxIn = 0, count = 2, goBack = 0;
+        int maxHeight = 0;
+        int maxIn = 0, count = 1, goBack = 0;
 
         while (st.hasMoreTokens()) {
             int current = Integer.parseInt(st.nextToken());
