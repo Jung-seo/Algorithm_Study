@@ -61,7 +61,6 @@ public class BJ_2257 {
         else if (c == 'O') return 16;
         else return 1;
     }
-    static void recursion ()
 }
 
 /*
