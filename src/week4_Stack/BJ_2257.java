@@ -33,7 +33,7 @@ public class BJ_2257 {
                 stack.pop();
                 while (stack.peek() != '(') {
                     if (Character.isDigit(stack.peek())) {
-                        result += ((int) stack.pop()) * toInt(stack.pop());
+                        result += (stack.pop() - '0') * toInt(stack.pop());
                     }
                     result += toInt(stack.pop());
                 }
@@ -43,7 +43,7 @@ public class BJ_2257 {
                 multiple = 1;
             }
             else { // 숫자일때
-                multiple = (int) stack.pop();
+                multiple = stack.pop() - '0';
             }
             result = 0;
         }
@@ -61,4 +61,11 @@ public class BJ_2257 {
         else if (c == 'O') return 16;
         else return 1;
     }
+    static void recursion ()
 }
+
+/*
+* ( 가 나올때 )가 나올때까지 값을 스텍에 넣고 재귀
+* 괄호 안의 값을 계산 후 스택2에 넣고
+* 숫자가 나오면 스택2 pop()에 해당 숫자를 곱하고 다시 push()
+*  */
