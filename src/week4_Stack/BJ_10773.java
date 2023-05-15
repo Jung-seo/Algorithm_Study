@@ -20,7 +20,6 @@ public class BJ_10773 {
             if (input == 0) stack.pop();
             else stack.push(input);
         }
-        int sum = 0;
-        System.out.println(stack.stream().mapToInt(el -> el).sum());
+        System.out.print(stack.stream().mapToInt(el -> el).sum());
     }
 }

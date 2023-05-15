@@ -20,17 +20,17 @@ public class BJ_2493 {
             while (!stack.isEmpty()) {
                 if (tower <= stack.peek()[1] ) {
                     sb.append(stack.peek()[0]).append(" ");
+                    stack.push(new int[] { i, tower});
                     break;
                 }
                 stack.pop();
             }
-            if (stack.isEmpty()) {
+            if (stack.isEmpty()) { // 스택이 비어 있을때 -> 처음 || 바로 전이 가장 높은 탑
                 stack.push(new int[] {i, tower});
                 sb.append(0 + " ");
-                continue;
             }
-            stack.push(new int[] { i, tower});
         }
         System.out.println(sb);
     }
 }
+// 6 9 5 7 4

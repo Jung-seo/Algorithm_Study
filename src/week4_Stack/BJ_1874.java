@@ -12,53 +12,36 @@ public class BJ_1874 {
         StringBuilder sb = new StringBuilder();
 
         int testCase = Integer.parseInt(br.readLine());
-        int[] arr = new int[testCase];
-
-        int num = 1;
+        int num = 1; // 스텍에 넣을 숫자
 
         for (int i = 0; i < testCase; i++) {
-            arr[i] = Integer.parseInt(br.readLine());
-
-//            스텍은 비었는데 더 넣을 수 있을때 || 처음 || 스텍 < 배열
-             if (num <= arr[i] || num == 1 || (!stack.isEmpty() && stack.peek() < arr[i])) {
-                while (num <= arr[i]) {
+            int input = Integer.parseInt(br.readLine());
+//            스텍은 비었는데 더 넣을 수 있을때  || 스텍 peek < 입력
+             if (num <= input || (!stack.isEmpty() && stack.peek() < input)) {
+                while (num <= input) {
                     stack.push(num);
                     sb.append("+\n");
                     num++;
-                    if (num > testCase + 1 ) {
-                        System.out.println("NO");
-                        return;
-                    }
                 }
                 stack.pop();
                 sb.append("-\n");
             }
-//             배열 <= 스택
-            else if (!stack.isEmpty() && stack.peek() >= arr[i]) {
-                  while (stack.peek() != arr[i]) { // 스택 == 배열일때 false
+//             입력 <= 스택
+            else if (!stack.isEmpty() && stack.peek() >= input) {
+                  while (stack.peek() != input) { // 스택 == 입력 일때 fase
                     stack.pop();
                     sb.append("-\n");
-                    if (stack.isEmpty()) {
-                        System.out.println("NO");
-                        return;
-                    }
+
                 }
                 stack.pop();
                 sb.append("-\n");
-            }
-            else {
-                System.out.println("NO");
+
+             }
+            else { // 더이상 스텍에 넣을 숫자가 없을때
+                System.out.print("NO");
                 return;
             }
         }
-        System.out.println(sb);
+        System.out.print(sb);
     }
 }
-
-/*
-
-작으면 push
-같으면 pop
-크면 pop
-
-*/

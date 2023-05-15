@@ -40,7 +40,7 @@ public class BJ_17413 {
                     sb.append(stack.pop());
             }
         }
-        System.out.println(sb);
+        System.out.print(sb);
     }
 }
 

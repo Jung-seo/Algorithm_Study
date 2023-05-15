@@ -50,8 +50,7 @@ public class BJ_2257 {
         while (!stack2.isEmpty()) {
             result += stack2.pop();
         }
-        System.out.println(stack2.size());
-        System.out.println(stack.size());
+
         System.out.print(result);
     }
 //    CH(CO2H)3
@@ -61,7 +60,9 @@ public class BJ_2257 {
         else if (c == 'O') return 16;
         else return 1;
     }
-    static void recursion ()
+    static void recursion (){
+
+    }
 }
 
 /*

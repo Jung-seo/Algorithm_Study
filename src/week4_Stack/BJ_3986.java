@@ -8,29 +8,26 @@ import java.util.Stack;
 public class BJ_3986 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        Stack<Character> stack = new Stack<>();
-        Stack<Character> stack2 = new Stack<>();
-        int num = Integer.parseInt(br.readLine());
+        Stack<Character> strStack = new Stack<>();
+        Stack<Character> result = new Stack<>();
+        int N = Integer.parseInt(br.readLine());
         int count = 0;
 
-        for (int i = 0; i < num; i++) {
+        for (int i = 0; i < N; i++) {
             String str = br.readLine();
             for (int j = 0; j < str.length(); j++) {
-                stack.push(str.charAt(j));
+                strStack.push(str.charAt(j));
             }
-            while (!stack.isEmpty()) {
-                char c = stack.pop();
+            while (!strStack.isEmpty()) {
+                char c = strStack.pop();
 
-                if (!stack2.isEmpty() && c == stack2.peek())
-                    stack2.pop();
-                else if (!stack.isEmpty() && c == stack.peek())
-                    stack.pop();
-                else stack2.push(c);
+                if (!result.isEmpty() && c == result.peek())
+                    result.pop();
+                else result.push(c); // result 비었을때
             }
-            if (stack2.isEmpty()) count++;
-            stack.clear();
-            stack2.clear();
+            if (result.isEmpty()) count++;
+            result.clear();
         }
-        System.out.println(count);
+        System.out.print(count);
     }
 }
