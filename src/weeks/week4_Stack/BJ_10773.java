@@ -1,4 +1,4 @@
-package week4_Stack;
+package weeks.week4_Stack;
 
 
 import java.io.BufferedReader;

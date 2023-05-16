@@ -1,4 +1,4 @@
-package week3_String;
+package weeks.week3_String;
 
 import java.io.IOException;
 import java.util.*;

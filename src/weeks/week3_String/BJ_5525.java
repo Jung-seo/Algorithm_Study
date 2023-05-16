@@ -1,4 +1,4 @@
-package week3_String;
+package weeks.week3_String;
 
 import java.io.BufferedReader;
 import java.io.IOException;
