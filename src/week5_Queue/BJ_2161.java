@@ -4,7 +4,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class BJ_2161 {
+// https://www.acmicpc.net/problem/2161
+
+public class BJ_2161 { // 카드 1
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Queue<Integer> que = new LinkedList<>();
